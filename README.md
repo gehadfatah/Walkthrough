@@ -6,20 +6,20 @@ A simple library to build a simple walkthrough activity.
 API level 19 or later
 
 ## Latest version
-Version 3.2.2 (July,2019)
+Version 3.2.3 (July,2019)
 
 ## Screenshots
 
-<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_1.png" alt="alt text" width="400">
-<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_2.png" alt="alt text" width="400">
-<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_3.png" alt="alt text" width="400">
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_1.png">
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_2.png">
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_3.png" >
 
 ## Getting started
-This library is published on jCenter. Just add these lines to `build.gradle`.
+This library is published on jitpack. Just add these lines to `build.gradle`.
 
 ```groovy
 dependencies {
-implementation 'com.github.gehadfatah:walkthrough:3.2.2'
+implementation 'com.github.gehadfatah:walkthrough:3.2.3'
 
 }
 
@@ -51,11 +51,15 @@ addPage(page);
 
 3- You can use this function to customize you activity :
 
-a- The color of progress :
+a- The type of progress, dots  by default it's dots :
+**DOTS_TYPE**
+    setProgressType(DOTS_TYPE);
+
+b- The color of progress :
 ```java
 setProgressBarColor(R.color.colorName);
 ```
-b- Transition : you can use any of this built in transitions
+c- Transition : you can use any of this built in transitions
 **ACCORDION_TRANSFORMER**,
 **BACK_TO_FORE_TRANSFORMER**,
 **FORE_TO_BACK_TRANSFORMER**,
@@ -69,7 +73,7 @@ setTransitionType(transition);
 ```
 and if you want the default transition for the viewPager don't call this function.
 
-c- To decide what happen when this Walkthrough finish just override onFinish() function.
+d- To decide what happen when this Walkthrough finish just override onFinish() function.
 ```java
 @Override
 public void onFinishButtonPressed() {
