@@ -154,7 +154,6 @@ public abstract class WalkthroughActivity extends AppCompatActivity implements V
 
         if (i == R.id.enjoyBtn && isInLastPage) {
             onFinishButtonPressed();
-            onFinish();
         } else if (i == R.id.ivPrev && !isInFirstPage) {
             mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1);
         } else if (i == R.id.ivNext && !isInLastPage) {
@@ -292,9 +291,7 @@ public abstract class WalkthroughActivity extends AppCompatActivity implements V
         updateProgress();
     }
 
-    public void hideSkipButton() {
-        // mSkipBtn.setVisibility(View.GONE);
-    }
+
 
     public void setProgressBarColor(int color) {
         Drawable drawable = mProgressBar.getProgressDrawable();
@@ -305,8 +302,6 @@ public abstract class WalkthroughActivity extends AppCompatActivity implements V
     }
 
 
-    public void onFinish() {
-        //finish();
-    }
+
 
 }
