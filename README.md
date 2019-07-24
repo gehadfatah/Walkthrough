@@ -10,12 +10,15 @@ Version 1.0.0 (July,2019)
 
 ## Screenshots
 
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/chatd.jpg" alt="alt text" width="400">
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/cjat.jpg" alt="alt text" width="400">
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/cjadj.jpg" alt="alt text" width="400">
+
 ## Getting started
 This library is published on jCenter. Just add these lines to `build.gradle`.
 
 ```groovy
 dependencies {
-    compile 'com.abanoub.androidlib:walkthrough:1.0.3:release@aar'
 }
 ```
 
