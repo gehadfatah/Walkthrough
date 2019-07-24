@@ -10,9 +10,9 @@ Version 3.2.3 (July,2019)
 
 ## Screenshots
 
-<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_1.png">
-<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_2.png">
-<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_3.png" >
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_1.png" alt="alt text" width="400">
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_2.png"alt="alt text" width="400">
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_3.png" alt="alt text" width="400">
 
 ## Getting started
 This library is published on jitpack. Just add these lines to `build.gradle`.
@@ -53,7 +53,9 @@ addPage(page);
 
 a- The type of progress, dots  by default it's dots :
 **DOTS_TYPE**
+```java
     setProgressType(DOTS_TYPE);
+```
 
 b- The color of progress :
 ```java
