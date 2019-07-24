@@ -1,17 +1,14 @@
 # Walkthrough
-A simple library to build a simple walkthrough activiy.
+A simple library to build a simple walkthrough activity.
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Walkthrough-green.svg?style=true)](https://android-arsenal.com/details/1/3582)
 
 ## Target platforms
-API level 14 or later
+API level 19 or later
 
 ## Latest version
-Version 1.0.3 (May 11,2016)
-## Forked then change in it 
-	
+Version 1.0.0 (July,2019)
+
 ## Screenshots
-[https://github.com/AbanoubAsaad/Walkthrough/tree/master/screenshots](https://github.com/AbanoubAsaad/Walkthrough/tree/master/screenshots)
 
 ## Getting started
 This library is published on jCenter. Just add these lines to `build.gradle`.
@@ -76,7 +73,7 @@ hideSkipButton();
 e- To decide what happen when this Walkthrough finish just override onFinish() function.
 ```java
 @Override
-public void onFinish() {
+public void onFinishButtonPressed() {
 	enter code here
 }
 ```
