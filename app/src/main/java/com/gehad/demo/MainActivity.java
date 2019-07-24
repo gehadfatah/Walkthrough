@@ -35,7 +35,6 @@ public class MainActivity extends WalkthroughActivity {
         addPage(page2);
         addPage(page3);
 
-        setProgressType(DOTS_TYPE);
         setTransitionType(STACK_TRANSFORMER);
         setProgressBarColor(R.color.red_700);
 

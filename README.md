@@ -6,7 +6,7 @@ A simple library to build a simple walkthrough activity.
 API level 19 or later
 
 ## Latest version
-Version 3.2.1 (July,2019)
+Version 3.2.2 (July,2019)
 
 ## Screenshots
 
@@ -19,7 +19,7 @@ This library is published on jCenter. Just add these lines to `build.gradle`.
 
 ```groovy
 dependencies {
-implementation 'com.github.gehadfatah:walkthrough:3.2.1'
+implementation 'com.github.gehadfatah:walkthrough:3.2.2'
 
 }
 
@@ -51,19 +51,11 @@ addPage(page);
 
 3- You can use this function to customize you activity :
 
-a- The type of progress, dots or horizontal bar by default it's dots :
-**DOTS_TYPE** or **BAR_TYPE** 
-	
-    setProgressType(progressType);
-and if you want to hide the progress just call 
-```java
-hideProgress();
-```
-b- The color of progress :
+a- The color of progress :
 ```java
 setProgressBarColor(R.color.colorName);
 ```
-c- Transition : you can use any of this built in transitions 
+b- Transition : you can use any of this built in transitions
 **ACCORDION_TRANSFORMER**,
 **BACK_TO_FORE_TRANSFORMER**,
 **FORE_TO_BACK_TRANSFORMER**,
@@ -77,7 +69,7 @@ setTransitionType(transition);
 ```
 and if you want the default transition for the viewPager don't call this function.
 
-d- To decide what happen when this Walkthrough finish just override onFinish() function.
+c- To decide what happen when this Walkthrough finish just override onFinish() function.
 ```java
 @Override
 public void onFinishButtonPressed() {
