@@ -10,17 +10,31 @@ Version 1.0.0 (July,2019)
 
 ## Screenshots
 
-<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/chatd.jpg" alt="alt text" width="400">
-<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/cjat.jpg" alt="alt text" width="400">
-<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/cjadj.jpg" alt="alt text" width="400">
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_1.png" alt="alt text" width="400">
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_2.png" alt="alt text" width="400">
+<img src="https://github.com/gehadfatah/Walkthrough/raw/master/screenshots/screen_3.png" alt="alt text" width="400">
 
 ## Getting started
 This library is published on jCenter. Just add these lines to `build.gradle`.
 
 ```groovy
 dependencies {
+implementation 'com.github.gehadfatah:walkthrough:3.1.0'
+
 }
+
 ```
+Add it in your root build.gradle at the end of repositories:
+```groovy
+allprojects {
+		repositories {
+			...
+			maven { url 'https://www.jitpack.io' }
+		}
+	}
+
+```
+
 
 ## Usage
 1- Just extend **WalkthroughActivity**
