@@ -6,7 +6,7 @@ A simple library to build a simple walkthrough activity.
 API level 19 or later
 
 ## Latest version
-Version 3.2.3 (July,2019)
+Version 3.2.4 (August,2019)
 
 ## Screenshots
 
@@ -19,7 +19,7 @@ This library is published on jitpack. Just add these lines to `build.gradle`.
 
 ```groovy
 dependencies {
-implementation 'com.github.gehadfatah:walkthrough:3.2.3'
+implementation 'com.github.gehadfatah:walkthrough:3.2.4'
 
 }
 
