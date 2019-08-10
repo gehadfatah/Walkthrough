@@ -29,7 +29,7 @@ import com.goda.walkthrough.transformation.ZoomOutSlideTransformer;
 import com.goda.walkthrough.transformation.ZoomOutTranformer;
 
 
-public abstract class WalkthroughActivity extends AppCompatActivity implements View.OnClickListener {
+public abstract class WalkthroughActivity extends AppCompatActivity implements clickOnImageListener, View.OnClickListener {
 
     public static final int BAR_TYPE = 0;
     public static final int DOTS_TYPE = 1;
@@ -78,7 +78,7 @@ public abstract class WalkthroughActivity extends AppCompatActivity implements V
         enjoyBtn = (Button) findViewById(R.id.enjoyBtn);
         ivNext = (ImageView) findViewById(R.id.ivNext);
         ivPrev = (ImageView) findViewById(R.id.ivPrev);
-        mAdapter = new WalkthroughPagerAdapter(this);
+        mAdapter = new WalkthroughPagerAdapter(this, this);
         mProgressBar = (ProgressBar) findViewById(R.id.walkthrough_progressbar);
         pager_indicator = (LinearLayout) findViewById(R.id.viewPagerCountDots);
         setListener();
@@ -139,6 +139,7 @@ public abstract class WalkthroughActivity extends AppCompatActivity implements V
         ivPrev.setOnClickListener(this);
         ivNext.setOnClickListener(this);
         enjoyBtn.setOnClickListener(this);
+        mViewPager.setOnClickListener(this);
 
     }
 
@@ -147,8 +148,19 @@ public abstract class WalkthroughActivity extends AppCompatActivity implements V
     }
 
     @Override
+    public void clickOnImage(boolean isLeft) {
+
+        if (isLeft) setClick(R.id.ivPrev);
+        else setClick(R.id.ivNext);
+    }
+
+    @Override
     public void onClick(View v) {
         int i = v.getId();
+        setClick(i);
+    }
+
+    public void setClick(int i) {
         boolean isInFirstPage = mViewPager.getCurrentItem() == 0;
         boolean isInLastPage = mViewPager.getCurrentItem() == mAdapter.getCount() - 1;
 
@@ -292,7 +304,6 @@ public abstract class WalkthroughActivity extends AppCompatActivity implements V
     }
 
 
-
     public void setProgressBarColor(int color) {
         Drawable drawable = mProgressBar.getProgressDrawable();
         // drawable.setColorFilter(new LightingColorFilter(0x00000000, getResources().getColor(color)));
@@ -300,8 +311,6 @@ public abstract class WalkthroughActivity extends AppCompatActivity implements V
         //mNormalDot.setColorFilter(new LightingColorFilter(0xFFFFFFFF, getResources().getColor(color)));
         updateProgress();
     }
-
-
 
 
 }

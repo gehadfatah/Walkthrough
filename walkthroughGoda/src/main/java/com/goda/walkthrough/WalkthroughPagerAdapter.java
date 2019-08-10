@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.viewpager.widget.PagerAdapter;
@@ -19,9 +20,11 @@ public class WalkthroughPagerAdapter extends PagerAdapter {
     LayoutInflater mLayoutInflater;
 
     ArrayList<WalkthroughItem> mItems;
+    clickOnImageListener clickOnImageListener;
 
-    public WalkthroughPagerAdapter(Context context) {
+    public WalkthroughPagerAdapter(Context context, clickOnImageListener clickOnImageListener) {
         mContext = context;
+        this.clickOnImageListener = clickOnImageListener;
         mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -34,7 +37,7 @@ public class WalkthroughPagerAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == ((LinearLayout) object);
+        return view == ((RelativeLayout) object);
     }
 
     @Override
@@ -43,13 +46,26 @@ public class WalkthroughPagerAdapter extends PagerAdapter {
         View itemView = mLayoutInflater.inflate(R.layout.walkthrough_item, container, false);
 
         ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
+        RelativeLayout leftSide = itemView.findViewById(R.id.leftSide);
+        RelativeLayout rightSide = itemView.findViewById(R.id.rightSide);
         TextView title = (TextView) itemView.findViewById(R.id.walkthrough_title);
         TextView details = (TextView) itemView.findViewById(R.id.walkthrough_details);
 
         WalkthroughItem currentWalkthroughItem = mItems.get(position);
 
         imageView.setImageResource(currentWalkthroughItem.getImageID());
-
+        leftSide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickOnImageListener.clickOnImage(true);
+            }
+        });
+        rightSide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickOnImageListener.clickOnImage(false);
+            }
+        });
         itemView.setBackgroundColor(mContext.getResources().getColor(currentWalkthroughItem.getBackgroundColorID()));
         title.setText(currentWalkthroughItem.getTitle());
         title.setTextColor(mContext.getResources().getColor(currentWalkthroughItem.getTitleColorID()));
@@ -63,7 +79,7 @@ public class WalkthroughPagerAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView((LinearLayout) object);
+        container.removeView((RelativeLayout) object);
     }
 
     public void addItem(WalkthroughItem walkthroughItem) {
