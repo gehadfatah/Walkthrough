@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+    android:layoutDirection="ltr"
+
     android:orientation="vertical">
 
     <ImageView
@@ -14,20 +16,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:background="@color/transparent">
+        android:background="@color/transparent"
+        android:orientation="horizontal">
 
         <RelativeLayout
-            android:layout_width="0dp"
             android:id="@+id/leftSide"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".5">
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="0dp"
             android:id="@+id/rightSide"
+            android:layout_width="0dp"
 
             android:layout_height="match_parent"
             android:layout_weight=".5">
